@@ -10,10 +10,10 @@
         android:id="@+id/storyImageView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="431dp"
+        android:layout_marginBottom="8dp"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/choice1Button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,18 +22,18 @@
         tools:src="@drawable/page0" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/storyTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:lineSpacingExtra="8sp"
-        tools:text="@string/page0"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/storyImageView" />
+        app:layout_constraintTop_toBottomOf="@+id/storyImageView"
+        tools:text="@string/page0" />
 
     <Button
         android:id="@+id/choice2Button"
@@ -58,4 +58,5 @@
         app:layout_constraintBottom_toTopOf="@+id/choice2Button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 </android.support.constraint.ConstraintLayout>
