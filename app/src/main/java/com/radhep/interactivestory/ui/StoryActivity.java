@@ -57,6 +57,23 @@ public class StoryActivity extends AppCompatActivity {
         pageText = String.format(pageText, name);
         storyTextView.setText(pageText);
 
+        if (page.isFinalPage()) {
+            choice1Button.setVisibility(View.INVISIBLE);
+            choice2Button.setText(R.string.play_agaion);
+            choice2Button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    loadPage(0);
+                }
+            });
+        } else {
+            loadButtons(page);
+        }
+
+    }
+
+    private void loadButtons(final Page page) {
+        choice1Button.setVisibility(View.VISIBLE);
         choice1Button.setText(page.getChoice1().getTextId());
         choice1Button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,7 +82,7 @@ public class StoryActivity extends AppCompatActivity {
                 loadPage(nextPage);
             }
         });
-
+        choice2Button.setVisibility(View.VISIBLE);
         choice2Button.setText(page.getChoice2().getTextId());
         choice2Button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,6 +91,5 @@ public class StoryActivity extends AppCompatActivity {
                 loadPage(nextPage);
             }
         });
-
     }
 }
